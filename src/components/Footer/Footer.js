@@ -3,7 +3,9 @@ import s from './Footer.module.css'
 function Footer() {
     return (
         <footer>
-            Footer component
+            <div className={s.content}>
+                <div className={s.text}>© iLINK ACADEMY. ALL RIGHTS RESERVED. 2022</div>
+            </div>
         </footer>
 
     );

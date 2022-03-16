@@ -7,10 +7,8 @@ function ProfileInfo() {
             <h1>
                 Добро пожаловать в академию!
             </h1>
-            <div className={s.content}>
-                <img src="https://i.ytimg.com/vi/QI1-vxp6hvo/maxresdefault.jpg" />
-                <InfoBlock />
-            </div>
+            <div className={s.myPhoto}/>
+            <InfoBlock />
         </div>
 
     );

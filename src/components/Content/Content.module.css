@@ -1,0 +1,17 @@
+.contentPage {
+    max-width: 1440px;
+    height: 1695px;
+    padding: 0;
+    margin: 0 auto;
+    background-color: #585CC6;
+    position: relative;
+}
+
+.contentPageBgLine {
+    position: absolute;
+    width: 827.73px;
+    height: 1610px;
+    left: 839px;
+    top: -266px;
+    background-image: url(../../icons/bgLine.svg);
+}

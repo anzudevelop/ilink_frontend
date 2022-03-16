@@ -1,10 +1,13 @@
 .infoBlockBody {
+    /* Информационный блок */
+
     position: absolute;
     width: 761px;
     height: 383px;
     left: 599px;
     top: 593px;
-    background: #ffffff;
+
+    background: #FFFFFF;
     border-radius: 2px;
 }
 

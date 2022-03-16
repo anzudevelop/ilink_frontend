@@ -4,7 +4,8 @@ import Reviews from "./Reviews/Reviews";
 
 function Content() {
     return (
-        <div>
+        <div className={s.contentPage}>
+            <div className={s.contentPageBgLine}/>
             <ProfileInfo />
             <Reviews />
         </div>

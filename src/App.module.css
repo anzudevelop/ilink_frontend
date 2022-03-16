@@ -1,9 +1,7 @@
 body {
-  background-color: #585CC6;
-}
+  position: relative;
+  background-color: #E5E5E5;
 
-.background {
-  z-index: 2
 }
 
 /* Vector 1 */
