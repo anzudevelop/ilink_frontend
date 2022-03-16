@@ -1,0 +1,30 @@
+.ProfileInfo h1 {
+    position: absolute;
+    width: 1157px;
+    height: 296px;
+    left: 80px;
+    top: 209px;
+
+    font: 124px Factor A TRIAL, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 148px;
+    /* or 119% */
+
+    letter-spacing: -0.0124em;
+
+    /* White #FFFFFF */
+
+    color: #FFFFFF;
+}
+
+/*
+.content img{
+    position: absolute;
+    width: 519px;
+    height: 383px;
+    left: 80px;
+    top: 625px;
+
+    border-radius: 2px;
+}*/
