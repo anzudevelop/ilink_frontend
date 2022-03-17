@@ -29,3 +29,53 @@ footer {
 
     color: #8A8A8A;
 }
+
+.socialLinks {
+    position: relative;
+    left: 1258px;
+    top: 22px;
+    width: 102px;
+    height: 20px;
+    display: flex;
+    justify-content: center;
+}
+
+.vk {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url(../../icons/social/vkLogo.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.fb {
+    position: absolute;
+    top: 0;
+    left: 41px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../../icons/social/facebookLogo.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.tw {
+    position: absolute;
+    top: 0;
+    left: 82px;
+    width: 20px;
+    height: 20px;
+    background-image: url(../../icons/social/twitterLogo.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.socialLinks li {
+    list-style-type: none;
+}

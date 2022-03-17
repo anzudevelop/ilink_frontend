@@ -8,7 +8,9 @@ function Header() {
                 <div className={s.block_1}>Яна Валиева</div>
                 <div className={s.block_2_logo_1} />
                 <div className={s.block_2_logo_2} />
-                <button className={s.block_3}>Панель управления</button>
+                <button className={s.block_3}>
+                    <div className={s.text}>Панель управления</div>
+                </button>
             </div>
         </div>
     );
