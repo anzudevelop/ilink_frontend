@@ -11,3 +11,110 @@
     border-radius: 2px;
 }
 
+.name {
+    /* Яна Валиева */
+    position: absolute;
+    width: 200px;
+    height: 32px;
+    left: 40px;
+    top: 40px;
+    font: 32px Factor A TRIAL, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 32px;
+    color: #585CC6;
+}
+
+.birthDay {
+    /* 08.10.1999 */
+    position: absolute;
+    width: 83px;
+    height: 24px;
+    right: 40px;
+    top: 44px;
+    font: 18px Gilroy, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0.01em;
+    color: #8A8A8A;
+}
+
+.citySexAge {
+    position: absolute;
+    top: 92px;
+    left: 40px;
+    right: 40px;
+    height: 24px;
+}
+
+.citySexAge div {
+    position: relative;
+    display: block;
+    float: left;
+    font: 18px Gilroy, Arial, Helvetica, sans-serif;
+    line-height: 24px;
+
+}
+
+.city {
+    margin-right: 40px;
+}
+
+.sex{
+    margin-right: 40px;
+}
+
+
+.sexIcon {
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    width: 9px;
+    height: 17px;
+    line-height: 24px;
+
+
+    background-image: url(../../../../icons/female.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.textContent {
+    position: absolute;
+    width: 681px;
+    height: 145px;
+    left: 40px;
+    top: 134px;
+
+    font: 18px Gilroy, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    line-height: 24px;
+
+    letter-spacing: 0.01em;
+
+    color: #333333;
+}
+
+.petsInfo {
+    position: absolute;
+    left: 84px;
+    bottom: 45px;
+    font: 18px Gilroy, Arial, Helvetica, sans-serif;
+    font-style: normal;
+    line-height: 24px;
+}
+
+.petBowlIcon {
+    position: absolute;
+    left: 40px;
+    bottom: 40px;
+    width: 32px;
+    height: 32px;
+
+    background-image: url(../../../../icons/petBowl.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}

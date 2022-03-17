@@ -9,9 +9,10 @@
 
 .contentPageBgLine {
     position: absolute;
-    width: 827.73px;
+    width: 828px;
     height: 1610px;
     left: 839px;
     top: -266px;
     background-image: url(../../icons/bgLine.svg);
+    background-repeat: no-repeat;
 }
