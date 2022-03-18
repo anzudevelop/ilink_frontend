@@ -5,11 +5,13 @@ function Header() {
         <div className={s.navbar}>
             <div className={s.block}>
                 <div className={s.block_img} />
+                <div className={s.name}>Яна</div>
                 <div className={s.block_1}>Яна Валиева</div>
                 <div className={s.block_2_logo_1} />
                 <div className={s.block_2_logo_2} />
                 <button className={s.block_3}>
                     <div className={s.text}>Панель управления</div>
+                    <div className={s.mobileIcon} />
                 </button>
             </div>
         </div>
