@@ -5,7 +5,7 @@ import Reviews from "./Reviews/Reviews";
 function Content() {
     return (
         <div className={s.contentPage}>
-            <div className={s.contentPageBgLine}/>
+            {/*<div className={s.contentPageBgLine}/>*/}
             <ProfileInfo />
             <Reviews />
         </div>
