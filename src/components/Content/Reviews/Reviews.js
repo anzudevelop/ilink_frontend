@@ -23,11 +23,14 @@ function Reviews(props) {
                 <div className={s.reviewSliderNoneActive} />
             </div>
             <div className={s.reviewsButtons}>
-                <button onClick={Click} className={`${s.backBtn} ${s.nonActiveButton}`} />
-                <div className={s.backButtonArrow} />
-                <button onClick={Click} className={`${s.forwardBtn} ${s.activeButton}`} />
-                <div className={s.forwardButtonArrow} />
+                <button onClick={Click} className={`${s.backBtn} ${s.nonActiveButton}`}>
+                    <div className={s.backButtonArrow} />
+                </button>
+                <button onClick={Click} className={`${s.forwardBtn} ${s.activeButton}`}>
+                    <div className={s.forwardButtonArrow} />
+                </button>
             </div>
+
 
         </div>
 
