@@ -1,18 +1,28 @@
 import s from './Reviews.module.css'
 import ReviewItem from "./ReviewItem/ReviewItem";
+import Popup from "./Popup/Popup";
+import {useState} from "react";
 
 function Reviews(props) {
     let Click = () => {
         console.log('click')
     }
 
+    const [popupActive, setPopupActive] = useState()
+
     return (
         <div className={s.reviewWindow}>
             <div className={s.reviewLabel}>Отзывы</div>
-            <button onClick={Click} className={s.addReview}>
+            <button onClick={() => setPopupActive(true)} className={s.addReview}>
                 <div className={s.icon} />
                 <div className={s.text}>Добавить отзыв</div>
             </button>
+
+
+            <Popup active={ popupActive } setActive={ setPopupActive }>
+                sdfghjgfdsdfghhgfdsdfgh
+            </Popup>
+
 
             <ReviewItem profileStyle={s.reviewBody_1} review={ props.reviews[0] }/>
             <ReviewItem profileStyle={s.reviewBody_2} review={ props.reviews[1] }/>
