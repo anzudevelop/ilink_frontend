@@ -1,26 +1,31 @@
 import s from './InfoBlock.module.css'
 
-function InfoBlock() {
+function InfoBlock(props) {
+    let personData = props.data
+
+    let defineSexIcon = () => {
+        if (personData.sex === 'male') return 'male'
+        else if (personData.sex === 'female') return 'female'
+        else return ''
+    }
+
     return (
         <div className={s.infoBlockBody}>
-            <div className={s.name}>Яна Валиева</div>
-            <div className={s.birthDay}>08.10.1999</div>
+            <div className={s.name}>{ personData.name } { personData.surname }</div>
+            <div className={s.birthDay}>{ personData.birthDay }</div>
             <div className={s.citySexAge}>
-                <div className={s.city}><b>Город:</b> Томск</div>
+                <div className={s.city}><b>Город:</b> { personData.city }</div>
                 <div className={s.sex}>
-                    <div><b>Пол:</b> женщина</div>
-                    <div className={s.sexIcon}/>
+                    <div><b>Пол:</b> { personData.sex === 'male' ? 'мужчина' : personData.sex === 'female' ? 'женщина' : 'нет данных'}</div>
+                    { personData.sex === 'male' ? <div className={ s.male } /> : <div className={ s.female } /> }
                 </div>
-                <div className={s.age}><b>Возраст:</b> 22</div>
+                <div className={s.age}><b>Возраст:</b> { personData.age }</div>
             </div>
             <div className={s.textContent}>
-                <b>О себе:</b> Всем привет! Меня зовут Яна, мне 22 года, я студент.
-                Учусь на программиста, но хочу стать продуктовым аналитиком.
-                Недавно, например, я начала проходить курс на известной платформе, который поможет мне устроиться на работу моей мечты!
-                BTW: И да, у меня есть милая кошка :)
+                <b>О себе:</b> { personData.personInformation }
             </div>
             <div className={s.petBowlIcon}/>
-            <div className={s.petsInfo}><b>Домашнее животное:</b> есть</div>
+            <div className={s.petsInfo}><b>Домашнее животное:</b> { personData.havePet ? 'есть' : 'нет'}</div>
         </div>
 
     );

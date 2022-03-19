@@ -2,12 +2,12 @@ import s from './Content.module.css'
 import ProfileInfo from "./ProfileInfo/Profileinfo";
 import Reviews from "./Reviews/Reviews";
 
-function Content() {
+function Content(props) {
     return (
         <div className={s.contentPage}>
             <div className={s.contentPageBgLine}/>
-            <ProfileInfo />
-            <Reviews />
+            <ProfileInfo data={ props.state.personData }/>
+            <Reviews reviews={ props.state.reviewsData }/>
         </div>
 
     );

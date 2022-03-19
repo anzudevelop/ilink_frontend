@@ -31,25 +31,27 @@
     }
 }
 
-.myPhoto {
+.myPhoto img{
     /* Ava */
 
     position: absolute;
-    width: 519px;
+    max-width: 519px;
     height: 383px;
-    left: 80px;
+    right: 841px;
     top: 625px;
 
-    background-image: url(../../../icons/Ava.jpg);
+    display:block;
+
     background-size: cover;
     background-position: center;
     border-radius: 2px;
+
 }
 @media (max-width: 320px) {
-    .myPhoto {
-        left: 5%;
+    .myPhoto img{
+        left:5%;
         top: 266px;
-        width: 95%;
+        max-width: 95%;
         height: 200px;
     }
 }

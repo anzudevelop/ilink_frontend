@@ -1,7 +1,7 @@
 import s from './Reviews.module.css'
 import ReviewItem from "./ReviewItem/ReviewItem";
 
-function Reviews() {
+function Reviews(props) {
     return (
         <div className={s.reviewWindow}>
             <div className={s.reviewLabel}>Отзывы</div>
@@ -10,8 +10,8 @@ function Reviews() {
                 <div className={s.text}>Добавить отзыв</div>
             </button>
 
-            <ReviewItem profileStyle={s.reviewBody_1}/>
-            <ReviewItem profileStyle={s.reviewBody_2}/>
+            <ReviewItem profileStyle={s.reviewBody_1} review={ props.reviews[0] }/>
+            <ReviewItem profileStyle={s.reviewBody_2} review={ props.reviews[1] }/>
 
             <div className={s.reviewSlider}>
                 <div className={s.reviewSliderActive} />

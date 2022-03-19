@@ -37,19 +37,18 @@
     }
 }
 
-.block_img {
+.block_img img {
     position: absolute;
     width: 52px;
     height: 52px;
     left: 80px;
     top: 32px;
-    background-image: url(../../icons/Ava.jpg);
     background-size: cover;
     background-position: center;
     border-radius: 2px;
 }
 @media (max-width: 320px) {
-    .block_img{
+    .block_img img{
         width: 36px;
         height: 36px;
         left: 5%;

@@ -22,8 +22,6 @@
 .name {
     /* Яна Валиева */
     position: absolute;
-    width: 200px;
-    height: 32px;
     left: 40px;
     top: 40px;
     font: 32px Factor A TRIAL, Arial, Helvetica, sans-serif;
@@ -111,25 +109,41 @@
     }
 }
 
+.male {
+    position: absolute;
+    top: 3px;
+    left: 10px;
+    width: 12px;
+    height: 17px;
+    line-height: 24px;
+    background-image: url(icons/male.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@media (max-width: 320px) {
+    .male{
+        width: 10px;
+        height: 17px;
+    }
+}
 
-.sexIcon {
+.female {
     position: absolute;
     top: 3px;
     left: 10px;
     width: 9px;
     height: 17px;
     line-height: 24px;
-
-
-    background-image: url(../../../../icons/female.svg);
+    background-image: url(icons/female.svg);
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
 }
 @media (max-width: 320px) {
-    .sexIcon{
+    .female{
         width: 7px;
-        height: 14px;
+        height: 17px;
     }
 }
 
