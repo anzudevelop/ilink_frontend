@@ -1,6 +1,10 @@
 import s from './Header.module.css'
 
 function Header(props) {
+
+    let Click = () => {
+        console.log('click')
+    }
     return (
         <div className={s.navbar}>
             <div className={s.block}>
@@ -11,7 +15,7 @@ function Header(props) {
                 <div className={s.block_1}>{ props.name } { props.surname }</div>
                 <div className={s.block_2_logo_1} />
                 <div className={s.block_2_logo_2} />
-                <button className={s.block_3}>
+                <button className={s.block_3} onClick={Click}>
                     <div className={s.text}>Панель управления</div>
                     <div className={s.mobileIcon} />
                 </button>

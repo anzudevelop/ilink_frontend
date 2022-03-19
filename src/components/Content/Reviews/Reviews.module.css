@@ -43,11 +43,10 @@
 }
 
 .addReview {
-    cursor: pointer;
     position: absolute;
     border:none;
     padding: 17px 27px;
-
+    cursor: pointer;
     width: 227px;
     height: 52px;
     right: 74px;
@@ -178,13 +177,27 @@
     background-repeat: no-repeat;
 }
 
+.reviewsButtons{
+    position: relative;
+    left: 1232px;
+    top: 469px;
+
+    width: 128px;
+    height: 56px;
+}
+@media (max-width: 320px) {
+    .reviewsButtons{
+        display: none;
+    }
+}
+
 .backBtn {
     position: absolute;
     cursor: pointer;
     width: 56px;
     height: 56px;
-    right: -90px;
-    bottom: 0px;
+    left: 0;
+    top: 0;
     border-radius: 2px;
     border: none;
 }
@@ -199,8 +212,8 @@
     cursor: pointer;
     width: 56px;
     height: 56px;
-    right: -162px;
-    bottom: 0px;
+    right: 0;
+    top: 0;
     border-radius: 2px;
     border: none;
 }
@@ -229,6 +242,7 @@
 }
 
 .backButtonArrow{
+
     position: absolute;
     width: 15px;
     height: 12px;
@@ -252,7 +266,7 @@
     position: absolute;
     width: 15px;
     height: 12px;
-    left: 20.5px;
+    right: 20.5px;
     top: 22px;
 
     background-image: url(../../../icons/arrowBlack.svg);

@@ -1,16 +1,12 @@
-.profileIcon {
+.profileIcon{
     position: absolute;
+    overflow: hidden;
     width: 52px;
     height: 52px;
     left: 24px;
     top: 24px;
 
     border-radius: 2px;
-
-    background-image: url(../../../../icons/Ava.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
 }
 @media (max-width: 320px) {
     .profileIcon{
@@ -19,6 +15,17 @@
         left: 4%;
         top: 16px;
     }
+}
+
+.profileIcon img {
+    max-width: none;
+    min-width: auto;
+    min-height: auto;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .profileName {
@@ -41,14 +48,15 @@
 }
 @media (max-width: 320px) {
     .profileName{
-        left: 19%;
-        top: 24px;
+
+        left: 24%;
+        top: 30px;
 
         font: 16px Factor A TRIAL, Arial, Helvetica, sans-serif;
 
         font-style: normal;
         font-weight: 500;
-        line-height: 24px;
+
     }
 }
 

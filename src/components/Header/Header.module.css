@@ -37,23 +37,35 @@
     }
 }
 
-.block_img img {
+.block_img {
     position: absolute;
     width: 52px;
     height: 52px;
     left: 80px;
     top: 32px;
-    background-size: cover;
-    background-position: center;
     border-radius: 2px;
+
 }
 @media (max-width: 320px) {
-    .block_img img{
+    .block_img {
         width: 36px;
         height: 36px;
         left: 5%;
         top: 21px;
     }
+}
+
+.block_img img {
+
+    max-width: none;
+    min-width: auto;
+    min-height: auto;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
 }
 
 .name {

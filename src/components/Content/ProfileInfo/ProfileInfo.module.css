@@ -35,12 +35,12 @@
     /* Ava */
 
     position: absolute;
+    overflow: hidden;
     max-width: 519px;
     height: 383px;
     right: 841px;
     top: 625px;
 
-    display:block;
 
     background-size: cover;
     background-position: center;
