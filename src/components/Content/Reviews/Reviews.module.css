@@ -284,6 +284,15 @@
     background-repeat: no-repeat;
 }
 
+.slideBtn {
+    cursor: pointer;
+}
+@media (max-width: 320px) {
+    .slideBtn{
+        display: none;
+    }
+}
+
 .backButton {
     position: absolute;
     width: 56px;

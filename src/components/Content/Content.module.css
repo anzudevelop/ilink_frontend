@@ -1,7 +1,7 @@
 .contentPage {
     position: relative;
     max-width: 1440px;
-    height: 1600px;
+    height: 1697px;
     padding: 0;
     margin: 0 auto;
     background-color: #585CC6;
@@ -9,11 +9,12 @@
 @media (max-width: 320px) {
     .contentPage {
         max-width: 320px;
+        height: 1580px;
     }
 }
 
 .contentPageBgLine {
-    position: absolute;
+    position: fixed;
     width: 828px;
     height: 1610px;
     left: 839px;

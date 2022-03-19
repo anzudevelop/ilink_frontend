@@ -33,10 +33,14 @@ function Reviews() {
                 <div className={s.reviewSliderNoneActive} />
                 <div className={s.reviewSliderNoneActive} />
             </div>
-            <div className={`${s.backButton} ${s.nonActiveButton}`} />
-            <div className={`${s.forwardButton} ${s.activeButton}`} />
-            <div className={s.backButtonArrow} />
-            <div className={s.forwardButtonArrow} />
+            <button className={s.slideBtn}>
+                <div className={`${s.backButton} ${s.nonActiveButton}`} />
+                <div className={s.backButtonArrow} />
+            </button>
+            <button className={s.slideBtn}>
+                <div className={`${s.forwardButton} ${s.activeButton}`} />
+                <div className={s.forwardButtonArrow} />
+            </button>
         </div>
 
     );

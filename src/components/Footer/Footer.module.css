@@ -8,20 +8,23 @@ footer {
     background-color: #F5F5F5;
 }
 @media (max-width: 320px) {
-    .footer {
+    footer {
+        position: absolute;
+        width: 320px;
         height: 84px;
     }
 }
 
+
 .content {
-    position: relative;
+    position: absolute;
     margin: 0 auto;
     width: 1440px;
     height: 64px;
-    line-height: 64px;
 }
 @media (max-width: 320px) {
     .content {
+        position: absolute;
         width: 320px;
         height: 84px;
     }
@@ -62,7 +65,7 @@ footer {
     top: 22px;
     width: 102px;
     height: 20px;
-    display: flex;
+    display: block;
     justify-content: center;
 }
 @media (max-width: 320px) {
