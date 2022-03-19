@@ -138,112 +138,6 @@
     }
 }
 
-.profileIcon {
-    position: absolute;
-    width: 52px;
-    height: 52px;
-    left: 24px;
-    top: 24px;
-
-    border-radius: 2px;
-
-    background-image: url(../../../icons/Ava.jpg);
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-@media (max-width: 320px) {
-    .profileIcon{
-        width: 40px;
-        height: 40px;
-        left: 4%;
-        top: 16px;
-    }
-}
-
-.profileName {
-    /* Буба Бубенцов */
-
-    position: absolute;
-
-    left: 96px;
-    top: 36px;
-
-    font: 24px Factor A TRIAL, Arial, Helvetica, sans-serif;
-
-    font-style: normal;
-    font-weight: 500;
-    line-height: 28px;
-
-    letter-spacing: -0.0124em;
-
-    color: #333333;
-}
-@media (max-width: 320px) {
-    .profileName{
-        left: 19%;
-        top: 24px;
-
-        font: 16px Factor A TRIAL, Arial, Helvetica, sans-serif;
-
-        font-style: normal;
-        font-weight: 500;
-        line-height: 24px;
-    }
-}
-
-.reviewDate {
-    /* 08.01.2022 */
-    position: absolute;
-    right: 24px;
-    top: 24px;
-
-    font: 14px Factor A TRIAL, Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
-
-    color: #8A8A8A;
-}
-@media (max-width: 320px) {
-    .reviewDate{
-        left: 4%;
-        top: 68px;
-        font: 10px Factor A TRIAL, Arial, Helvetica, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 14px;
-    }
-}
-
-.reviewText {
-    position: absolute;
-    width: 471px;
-    height: 155px;
-    left: 24px;
-    right: 24px;
-    top: 100px;
-
-    font: 14px Gilroy, Arial, Helvetica, sans-serif;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 22px;
-
-    color: #333333;
-}
-@media (max-width: 320px) {
-    .reviewText{
-        left: 4%;
-        right: 94px;
-        width: 92%;
-        height: 238px;
-        font: 12px Gilroy, Arial, Helvetica, sans-serif;
-        font-style: normal;
-        font-weight: 400;
-        line-height: 20px;
-    }
-}
-
 .reviewSlider {
     position: relative;
     width: 66px;
@@ -284,36 +178,31 @@
     background-repeat: no-repeat;
 }
 
-.slideBtn {
-    cursor: pointer;
-}
-@media (max-width: 320px) {
-    .slideBtn{
-        display: none;
-    }
-}
-
-.backButton {
+.backBtn {
     position: absolute;
+    cursor: pointer;
     width: 56px;
     height: 56px;
     right: -90px;
     bottom: 0px;
     border-radius: 2px;
+    border: none;
 }
 @media (max-width: 320px) {
-    .backButton{
+    .backBtn{
         display: none;
     }
 }
 
-.forwardButton {
+.forwardBtn {
     position: absolute;
+    cursor: pointer;
     width: 56px;
     height: 56px;
     right: -162px;
     bottom: 0px;
     border-radius: 2px;
+    border: none;
 }
 @media (max-width: 320px) {
     .forwardButton{
@@ -324,17 +213,27 @@
 .activeButton {
     background: #FFFFFF;
 }
+@media (max-width: 320px) {
+    .activeButton{
+        display: none;
+    }
+}
 
 .nonActiveButton {
     background: #E0E0E0;
+}
+@media (max-width: 320px) {
+    .nonActiveButton{
+        display: none;
+    }
 }
 
 .backButtonArrow{
     position: absolute;
     width: 15px;
     height: 12px;
-    right: -71.5px;
-    bottom: 22px;
+    left: 20.5px;
+    top: 22px;
 
     opacity: 0.5;
     transform: rotate(180deg);
@@ -353,8 +252,8 @@
     position: absolute;
     width: 15px;
     height: 12px;
-    right: -143.5px;
-    bottom: 22px;
+    left: 20.5px;
+    top: 22px;
 
     background-image: url(../../../icons/arrowBlack.svg);
     background-size: cover;

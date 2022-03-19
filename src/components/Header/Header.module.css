@@ -138,12 +138,12 @@
     }
 }
 
-.block_3 {
+.block_3{
     /* Button */
+    position: absolute;
     cursor: pointer;
     padding: 17px 28px;
 
-    position: absolute;
     width: 227px;
     height: 52px;
     left: 1133px;

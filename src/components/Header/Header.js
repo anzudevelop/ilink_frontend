@@ -19,10 +19,3 @@ function Header() {
 }
 
 export default Header;
-
-/*
-        <header>
-            Header component
-            <button className={ s.button }>Панель управления</button>
-        </header>
-        */
