@@ -2,10 +2,20 @@
     position: relative;
     width: 676px;
     min-height: 443px;
+    padding: 24px;
+}
+@media (max-width: 320px) {
+    .body{
+        padding: unset;
+        width: 288px;
+        min-height: 463px;
+    }
 }
 
 .body h1 {
     position: absolute;
+    top: 24px;
+    left: 24px;
     font-family: 'Factor A TRIAL';
     font-style: normal;
     font-weight: 500;
@@ -13,6 +23,17 @@
     line-height: 28px;
     letter-spacing: -0.0124em;
     color: #333333;
+}
+@media (max-width: 320px) {
+    .body h1{
+        top: 0;
+        left: 16px;
+        font-family: 'Factor A TRIAL';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 24px;
+    }
 }
 
 .body h2 {
@@ -25,37 +46,60 @@
     letter-spacing: -0.0124em;
     color: #333333;
 }
+@media (max-width: 320px) {
+    .body h2{
+
+    }
+}
 
 .whatsYourName {
-    top: 48px;
-    left: 0;
+    top: 72px;
+    left: 24px;
+}
+@media (max-width: 320px) {
+    .whatsYourName{
+        top: 44px;
+        left: 16px;
+    }
 }
 
 .isEverythingIsGood {
-    top: 166px;
-    left: 0;
+    top: 190px;
+    left: 24px;
+}
+@media (max-width: 320px) {
+    .isEverythingIsGood{
+        top: 190px;
+        left: 16px;
+    }
 }
 
 .closeBtn {
     position: absolute;
     cursor: pointer;
-    right: 0;
-    top: 0;
+    right: 20px;
+    top: 26px;
     background: white;
     border: none;
 }
-
-.textField {
-    position: absolute;
-    ledt: 0;
-    top: 92px;
-    margin-right: 16px;
+@media (max-width: 320px) {
+    .closeBtn{
+        width: 16px;
+        height: auto;
+        right: 20px;
+        top: 16px;
+    }
 }
 
-.textFieldInput {
+.body input {
+    position: absolute;
+    top: 118px;
+    left: 24px;
+    margin-right: 16px;
     display: block;
     width: 395px;
     height: 52px;
+
 
     font-family: 'Gilroy';
     font-style: normal;
@@ -70,6 +114,19 @@
     border-radius: 2px;
     padding: 0 12px;
 }
+INPUT[type="text"] {
+    color: #000000;
+}
+@media (max-width: 320px) {
+    .body input{
+        top: 86px;
+        left: 16px;
+
+        width: 230px;
+        height: 42px;
+
+    }
+}
 
 .addPhoto {
     position: absolute;
@@ -78,11 +135,20 @@
     cursor: pointer;
     width: 227px;
     height: 52px;
-    right: 0;
-    top: 92px;
+    top: 118px;
+    right: 24px;
 
     background: #585CC6;
     border-radius: 2px;
+}
+@media (max-width: 320px) {
+    .addPhoto{
+        top: 140px;
+        left: 16px;
+        width: 149px;
+        height: 42px;
+        padding: unset;
+    }
 }
 
 .addPhoto .icon {
@@ -97,8 +163,19 @@
     background-position: center;
     background-repeat: no-repeat;
 }
+@media (max-width: 320px) {
+    .addPhoto .icon{
+        left: 13px;
+        top: 16px;
+        width: 10px;
+        height: 10px;
+    }
+}
 
 .addPhoto .text {
+    position: absolute;
+    top: 17px;
+    left: 47px;
     font: 18px Gilroy, Arial, Helvetica, sans-serif;
     font-weight: 600;
     line-height: 18px;
@@ -112,20 +189,31 @@
     flex-grow: 0;
     margin-left: 12px;
 }
+@media (max-width: 320px) {
+    .addPhoto .text{
+        top: 12px;
+        left: 30px;
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+        margin-left: 0;
+    }
+}
 
 .reviewField textarea {
     position: absolute;
-    left: 0;
-    top: 222px;
+    top: 234px;
+    left: 24px;
     width: 652px;
-    height: 105px;
-
+    height: 93px;
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
     line-height: 22px;
-    color: #8A8A8A;
+
+    color: #000000;
 
     background-color: #ffffff;
     background-clip: padding-box;
@@ -134,11 +222,21 @@
     padding: 12px 12px;
     resize: none;
 }
+::-webkit-input-placeholder {
+    color: #8A8A8A;
+}
+@media (max-width: 320px) {
+    .reviewField textarea{
+        top: 232px;
+        left: 16px;
+        width: 230px;
+    }
+}
 
 .counter {
     position: absolute;
-    right: 4px;
     top: 330px;
+    right: 28px;
 
     font-family: 'Gilroy';
     font-style: normal;
@@ -148,16 +246,11 @@
 
     color: #8A8A8A;
 }
-
-.bottom {
-    position: absolute;
-    left: 0;
-    bottom: 0;
-    width: 69%;
-    height: 52px;
-    display: flex;
-    justify-content: center;
-    line-height: 52px;
+@media (max-width: 320px) {
+    .counter{
+        top: 330px;
+        right: 20px;
+    }
 }
 
 .sendReview{
@@ -166,16 +259,25 @@
     cursor: pointer;
     padding: 17px 28px;
 
+    bottom: 24px;
+    left: 24px;
+
     width: 203px;
     height: 52px;
-    left: 0;
-    top: 0;
+
 
     border: none;
 
     background: #585CC6;
     border-radius: 2px;
 
+}
+@media (max-width: 320px) {
+    .sendReview{
+        bottom: 16px;
+        left: 16px;
+        width: 256px;
+    }
 }
 
 .sendReview .text {
@@ -196,21 +298,57 @@
     margin: 0px 10px;
 
 }
+@media (max-width: 320px) {
+    .sendReview .text{
+        top: 17px;
+        left: 60px;
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 18px;
+    }
+}
 
-.bottom img {
-    left: 221px;
+.infoImg {
+    position: absolute;
+    top: 432px;
+    left: 245px;
     width: 15px;
     height: auto;
+}
+@media (max-width: 320px) {
+    .infoImg{
+        top: 364px;
+        left: 16px;
+        width: 14px;
+    }
 }
 
 .infoText {
     position: absolute;
-    left: 247px;
+    top: 434px;
+    left: 271px;
     width: 293px;
     font-family: 'Gilroy';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
+    line-height: 16px;
 
     color: #8A8A8A;
+}
+@media (max-width: 320px) {
+    .infoText{
+        top: 360px;
+        left: 42px;
+        right: 16px;
+        width: unset;
+
+        font-family: 'Gilroy';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 12px;
+    }
 }
