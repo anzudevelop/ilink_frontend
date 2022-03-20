@@ -6,9 +6,6 @@ import ReviewPopup from "./ReviewPopup/ReviewPopup";
 import {useState} from "react";
 
 function Reviews(props) {
-    let Click = () => {
-        console.log('click')
-    }
 
     const [popupActive, setPopupActive] = useState()
 
@@ -22,7 +19,7 @@ function Reviews(props) {
 
 
             <Popup active={ popupActive } setActive={ setPopupActive }>
-                <ReviewPopup setActive={ setPopupActive }/>
+                <ReviewPopup setActive={ setPopupActive } addReview={ props.addReview }/>
             </Popup>
 
 
@@ -35,10 +32,10 @@ function Reviews(props) {
                 <div className={s.reviewSliderNoneActive} />
             </div>
             <div className={s.reviewsButtons}>
-                <button onClick={Click} className={`${s.backBtn} ${s.nonActiveButton}`}>
+                <button className={`${s.backBtn} ${s.nonActiveButton}`}>
                     <div className={s.backButtonArrow} />
                 </button>
-                <button onClick={Click} className={`${s.forwardBtn} ${s.activeButton}`}>
+                <button className={`${s.forwardBtn} ${s.activeButton}`}>
                     <div className={s.forwardButtonArrow} />
                 </button>
             </div>

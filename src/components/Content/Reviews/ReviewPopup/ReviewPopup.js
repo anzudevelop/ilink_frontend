@@ -11,14 +11,23 @@ function ReviewPopup(props) {
     const [inputName, updateInputName] = useState('')
     const [inputReviewText, updateInputReviewText] = useState('')
 
+    const clearInputs = () => {
+        updateInputName('')
+        updateInputReviewText('')
+    }
+
+    const addReview = () => {
+        if (inputName.length <= 0 || inputReviewText.length <= 0) return console.log('nothing')
+        props.addReview(inputName, inputReviewText)
+    }
+
     return (
         <div className={s.body}>
             <h1>Отзыв</h1>
             <h2 className={s.whatsYourName}>Как вас зовут?</h2>
             <button className={s.closeBtn} onClick={() => {
                 props.setActive(false)
-                updateInputName('')
-                updateInputReviewText('')
+                clearInputs()
                 }}>
                 <img src={closeIcon} alt="closeWindow"/>
             </button>
@@ -38,7 +47,11 @@ function ReviewPopup(props) {
                 </div>
             </div>
 
-            <button className={s.sendReview}>
+            <button className={s.sendReview} onClick={() => {
+                props.setActive(false)
+                clearInputs()
+                addReview()
+            }}>
                 <div className={s.text}>Отправить отзыв</div>
             </button>
             <div className={s.infoImg}>

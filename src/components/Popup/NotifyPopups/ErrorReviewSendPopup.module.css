@@ -1,0 +1,16 @@
+.popupArea {
+    position: fixed;
+    bottom: 40px;
+    right: 40px;
+    width: 438px;
+    height: 174px;
+}
+@media (max-width: 320px) {
+    .popupArea{
+        bottom: 16px;
+        right: 16px;
+        left: 16px;
+        width: 288px;
+        height: 174px;
+    }
+}
