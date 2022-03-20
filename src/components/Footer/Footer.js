@@ -1,6 +1,7 @@
 import s from './Footer.module.css'
 
 function Footer() {
+
     return (
         <footer>
             <div className={s.content}>
@@ -8,8 +9,8 @@ function Footer() {
                 <div className={s.socialLinks}>
                     <li>
                         <a className={s.vk} href="https://vk.com/alexkosogor"/>
-                        <a className={s.fb} href=""/>
-                        <a className={s.tw} href=""/>
+                        <a className={s.fb} onClick={() => {alert('К сожалению, меня нет на facebook 😔')}}/>
+                        <a className={s.tw} onClick={() => {alert('К сожалению, меня нет в twitter 😔')}}/>
                     </li>
                 </div>
             </div>

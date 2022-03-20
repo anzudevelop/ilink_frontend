@@ -8,6 +8,18 @@ import {useState} from "react";
 function Reviews(props) {
 
     const [popupActive, setPopupActive] = useState()
+    const [firstReview, updateFirstReview] = useState(props.reviews[0])
+    const [secondReview, updateSecondReview] = useState(props.reviews[1])
+
+    const nextReviews = () => {
+        updateFirstReview(props.reviews[2])
+        updateSecondReview(props.reviews[3])
+    }
+
+    const previousReviews = () => {
+        updateFirstReview(props.reviews[0])
+        updateSecondReview(props.reviews[1])
+    }
 
     return (
         <div className={s.reviewWindow}>
@@ -23,8 +35,8 @@ function Reviews(props) {
             </Popup>
 
 
-            <ReviewItem profileStyle={s.reviewBody_1} review={ props.reviews[0] }/>
-            <ReviewItem profileStyle={s.reviewBody_2} review={ props.reviews[1] }/>
+            <ReviewItem profileStyle={s.reviewBody_1} review={ firstReview }/>
+            <ReviewItem profileStyle={s.reviewBody_2} review={ secondReview }/>
 
             <div className={s.reviewSlider}>
                 <div className={s.reviewSliderActive} />
@@ -32,10 +44,10 @@ function Reviews(props) {
                 <div className={s.reviewSliderNoneActive} />
             </div>
             <div className={s.reviewsButtons}>
-                <button className={`${s.backBtn} ${s.nonActiveButton}`}>
+                <button className={`${s.backBtn} ${s.nonActiveButton}`} onClick={nextReviews}>
                     <div className={s.backButtonArrow} />
                 </button>
-                <button className={`${s.forwardBtn} ${s.activeButton}`}>
+                <button className={`${s.forwardBtn} ${s.activeButton}`} onClick={previousReviews}>
                     <div className={s.forwardButtonArrow} />
                 </button>
             </div>

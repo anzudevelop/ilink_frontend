@@ -80,6 +80,7 @@ footer {
 
 .vk {
     position: absolute;
+    cursor: pointer;
     top: 0;
     left: 0;
     width: 20px;
@@ -92,6 +93,7 @@ footer {
 
 .fb {
     position: absolute;
+    cursor: pointer;
     top: 0;
     left: 41px;
     width: 20px;
@@ -104,6 +106,7 @@ footer {
 
 .tw {
     position: absolute;
+    cursor: pointer;
     top: 0;
     left: 82px;
     width: 20px;

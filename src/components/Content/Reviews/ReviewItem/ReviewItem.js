@@ -1,6 +1,7 @@
 import s from './ReviewItem.module.css'
 
 function ReviewItem(props) {
+
     return (
         <div className={props.profileStyle}>
             <div className={s.profileIcon}>

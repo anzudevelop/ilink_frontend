@@ -10,6 +10,7 @@ function ReviewPopup(props) {
 
     const [inputName, updateInputName] = useState('')
     const [inputReviewText, updateInputReviewText] = useState('')
+    const [inputCounter, updateInputCounter] = useState(0)
 
     const clearInputs = () => {
         updateInputName('')
@@ -41,9 +42,14 @@ function ReviewPopup(props) {
             <h2 className={s.isEverythingIsGood}>Все ли вам понравилось?</h2>
 
             <div className={s.reviewField}>
-                <textarea placeholder="Напишите пару слов о вашем опыте..." onChange={() => updateInputReviewText(newReviewText.current.value)} ref={newReviewText} value={ inputReviewText }></textarea>
+                <textarea placeholder="Напишите пару слов о вашем опыте..." ref={newReviewText} value={ inputReviewText } onChange={() => {
+                    let str = newReviewText.current.value
+                    if (str.length >= 200) str = str.substring(0, str.length - (str.length - 200));
+                    updateInputReviewText(str)
+                    updateInputCounter(str.length)
+                }} />
                 <div className={s.counter}>
-                    <span>0/200</span>
+                    <span>{ inputCounter }/200</span>
                 </div>
             </div>
 
