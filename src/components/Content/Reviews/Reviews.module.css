@@ -55,6 +55,9 @@
     background: #585CC6;
     border-radius: 2px;
 }
+.addReview:hover {
+    background: #797DDF;
+}
 @media (max-width: 320px) {
     .addReview{
         width: 42px;

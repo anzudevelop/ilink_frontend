@@ -81,6 +81,10 @@
     top: 26px;
     background: white;
     border: none;
+    opacity: 0.5;
+}
+.closeBtn:hover {
+    opacity: 1;
 }
 @media (max-width: 320px) {
     .closeBtn{
@@ -140,6 +144,9 @@ INPUT[type="text"] {
 
     background: #585CC6;
     border-radius: 2px;
+}
+.addPhoto:hover {
+    background: #797DDF;
 }
 @media (max-width: 320px) {
     .addPhoto{
@@ -271,6 +278,9 @@ INPUT[type="text"] {
     background: #585CC6;
     border-radius: 2px;
 
+}
+.sendReview:hover {
+    background: #797DDF;
 }
 @media (max-width: 320px) {
     .sendReview{

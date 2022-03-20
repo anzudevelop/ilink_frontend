@@ -166,6 +166,9 @@
     background: #585CC6;
     border-radius: 2px;
 }
+.block_3:hover {
+    background: #797DDF;
+}
 @media (max-width: 320px) {
     .block_3{
         padding: 8px;
