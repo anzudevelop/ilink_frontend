@@ -1,6 +1,8 @@
 import s from './Reviews.module.css'
 import ReviewItem from "./ReviewItem/ReviewItem";
-import Popup from "./Popup/Popup";
+import Popup from "../../Popup/Popup";
+import ReviewPopup from "./ReviewPopup/ReviewPopup";
+
 import {useState} from "react";
 
 function Reviews(props) {
@@ -20,7 +22,7 @@ function Reviews(props) {
 
 
             <Popup active={ popupActive } setActive={ setPopupActive }>
-                sdfghjgfdsdfghhgfdsdfgh
+                <ReviewPopup setActive={ setPopupActive }/>
             </Popup>
 
 
