@@ -57,7 +57,7 @@ let store = {
         let name = nameInput[0]
         let surname = nameInput[1]
         let date = new Date().toLocaleDateString();
-        let img = 'https://proprikol.ru/wp-content/uploads/2020/10/kartinki-krasivyh-muzhchin-54.jpg'
+        let img = 'https://evroperimetr.ru/content/front/zabory_tmp1/img/reviews-icon.jpg'
         let newReview = {
             id: this._state.reviewsData.length + 1,
             name: name,
