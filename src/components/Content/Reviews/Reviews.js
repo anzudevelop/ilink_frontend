@@ -34,9 +34,17 @@ function Reviews(props) {
                 <ReviewPopup setActive={ setPopupActive } addReview={ props.addReview }/>
             </Popup>
 
+            <div className={s.reviewsWindow}>
+                <div className={s.firstReviewItem}>
+                    <ReviewItem review={ firstReview }/>
+                </div>
+                <div className={s.secondReviewItem}>
+                    <ReviewItem review={ secondReview }/>
+                </div>
+            </div>
 
-            <ReviewItem profileStyle={s.reviewBody_1} review={ firstReview }/>
-            <ReviewItem profileStyle={s.reviewBody_2} review={ secondReview }/>
+
+
 
             <div className={s.reviewSlider}>
                 <div className={s.reviewSliderActive} />
