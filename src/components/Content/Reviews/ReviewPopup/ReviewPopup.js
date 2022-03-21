@@ -5,8 +5,9 @@ import infoSquare from '../../../../icons/infoSquare.svg'
 import {useState} from "react";
 
 function ReviewPopup(props) {
-    let newName = React.createRef()
-    let newReviewText = React.createRef()
+    const newName = React.createRef()
+    const newReviewText = React.createRef()
+    const hiddenFileInput = React.useRef(null);
 
     const [inputName, updateInputName] = useState('')
     const [inputReviewText, updateInputReviewText] = useState('')
@@ -16,12 +17,27 @@ function ReviewPopup(props) {
         updateInputName('')
         updateInputReviewText('')
         updateInputCounter(0)
+        props.updateReviewerPhoto('https://evroperimetr.ru/content/front/zabory_tmp1/img/reviews-icon.jpg')
     }
+
+    const handleClick = () => {
+        hiddenFileInput.current.click();
+    };
+
+    const handleChange = event => {
+        const fileUploaded = event.target.files[0];
+        let reader = new FileReader()
+        reader.readAsDataURL(fileUploaded)
+        reader.onload = function () {
+            let imgSrc = reader.result
+            props.updateReviewerPhoto(imgSrc)
+        }
+    };
 
     const addReview = () => {
         if (inputName.length <= 0 || inputReviewText.length <= 0) return console.log('nothing')
         props.addReview(inputName, inputReviewText)
-
+        props.updateReviewerPhoto('https://evroperimetr.ru/content/front/zabory_tmp1/img/reviews-icon.jpg')
     }
 
     return (
@@ -37,10 +53,12 @@ function ReviewPopup(props) {
 
             <input type="text" name="username" id="user" placeholder="Имя Фамилия" onChange={() => updateInputName(newName.current.value)} ref={newName} value={inputName}/>
 
-            <button className={s.addPhoto}>
+            <button className={s.addPhoto} onClick={handleClick}>
                 <div className={s.icon} />
                 <div className={s.text}>Загрузить фото</div>
             </button>
+            <input type="file" ref={hiddenFileInput} onChange={handleChange} style={{display:'none'}} />
+
             <h2 className={s.isEverythingIsGood}>Все ли вам понравилось?</h2>
 
             <div className={s.reviewField}>
