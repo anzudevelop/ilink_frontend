@@ -7,18 +7,64 @@ import {useState} from "react";
 
 function Reviews(props) {
 
+    let reviewAmount = props.reviews.length
+
+    const [reviewPageCounter, changeReviewPageCounter] = useState(0)
     const [popupActive, setPopupActive] = useState()
-    const [firstReview, updateFirstReview] = useState(props.reviews[0])
-    const [secondReview, updateSecondReview] = useState(props.reviews[1])
+    const [firstReview, updateFirstReview] = useState(props.reviews[reviewPageCounter])
+    const [secondReview, updateSecondReview] = useState(props.reviews[reviewPageCounter+1])
+    const [backBtnClasses, updateBackBtnClasses] = useState(`${s.backBtn} ${s.nonActiveButton}`)
+    const [forwardBtnClasses, updateForwardBtnClasses] = useState(`${s.forwardBtn} ${s.activeButton}`)
+    const [backArrowOpacity, setBackArrowOpacity] = useState({opacity: 0.5})
+    const [forwardArrowOpacity, setForwardArrowOpacity] = useState({opacity: 1})
+    let Slider = []
+
+    setSlider(reviewPageCounter)
+
 
     const nextReviews = () => {
-        updateFirstReview(props.reviews[2])
-        updateSecondReview(props.reviews[3])
+        if ((reviewPageCounter + 1) * 2 >= reviewAmount) return
+        if ((reviewPageCounter + 2) * 2 >= reviewAmount) {
+            updateForwardBtnClasses(`${s.forwardBtn} ${s.nonActiveButton}`)
+            setBackArrowOpacity({opacity: 0.5})
+        }
+        changeReviewPageCounter(reviewPageCounter + 1)
+        setSlider(reviewPageCounter)
+        updateFirstReview(props.reviews[reviewPageCounter + 2])
+        updateSecondReview(props.reviews[reviewPageCounter + 3])
+        updateBackBtnClasses(`${s.backBtn} ${s.activeButton}`)
+        setBackArrowOpacity({opacity: 1})
+    }
+    const previousReviews = () => {
+        if (reviewPageCounter == 0) return
+        if ((reviewPageCounter - 1) == 0) {
+            updateBackBtnClasses(`${s.backBtn} ${s.nonActiveButton}`)
+            setForwardArrowOpacity({opacity: 0.5})
+        }
+        changeReviewPageCounter(reviewPageCounter - 1)
+        setSlider(reviewPageCounter)
+        updateFirstReview(props.reviews[reviewPageCounter - 1])
+        updateSecondReview(props.reviews[reviewPageCounter])
+        updateForwardBtnClasses(`${s.forwardBtn} ${s.activeButton}`)
+        setForwardArrowOpacity({opacity: 1})
     }
 
-    const previousReviews = () => {
-        updateFirstReview(props.reviews[0])
-        updateSecondReview(props.reviews[1])
+    let Sliders = [
+            <div className={s.reviewSliderActive} />,
+            <div className={s.reviewSliderNoneActive} />,
+            <div className={s.reviewSliderNoneActive} />,
+            <div className={s.reviewSliderNoneActive} />,
+            <div className={s.reviewSliderNoneActive} />
+        ]
+
+    function setSlider(mainPosition) {
+        let ElementsList = []
+        Slider = []
+        //setSliderPosition(ElementsList)
+        for (let i = 0; i < mainPosition; i++) ElementsList.push(<div className={s.reviewSliderNoneActive} />,)
+        ElementsList.push(<div className={s.reviewSliderActive} />,)
+        for (let i = (mainPosition + 1); i < reviewAmount/2; i++) ElementsList.push(<div className={s.reviewSliderNoneActive} />,)
+        Slider = ElementsList
     }
 
     return (
@@ -28,7 +74,6 @@ function Reviews(props) {
                 <div className={s.icon} />
                 <div className={s.text}>Добавить отзыв</div>
             </button>
-
 
             <Popup active={ popupActive } setActive={ setPopupActive }>
                 <ReviewPopup setActive={ setPopupActive } addReview={ props.addReview }/>
@@ -43,20 +88,15 @@ function Reviews(props) {
                 </div>
             </div>
 
-
-
-
             <div className={s.reviewSlider}>
-                <div className={s.reviewSliderActive} />
-                <div className={s.reviewSliderNoneActive} />
-                <div className={s.reviewSliderNoneActive} />
+                {Slider}
             </div>
             <div className={s.reviewsButtons}>
-                <button className={`${s.backBtn} ${s.nonActiveButton}`} onClick={nextReviews}>
-                    <div className={s.backButtonArrow} />
+                <button className={ backBtnClasses } onClick={previousReviews}>
+                    <div className={s.backButtonArrow} style={backArrowOpacity}/>
                 </button>
-                <button className={`${s.forwardBtn} ${s.activeButton}`} onClick={previousReviews}>
-                    <div className={s.forwardButtonArrow} />
+                <button className={ forwardBtnClasses } onClick={nextReviews}>
+                    <div className={s.forwardButtonArrow} style={forwardArrowOpacity}/>
                 </button>
             </div>
 

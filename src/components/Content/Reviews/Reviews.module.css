@@ -156,17 +156,18 @@
 
 .reviewSlider {
     position: relative;
-    width: 66px;
-    height: 0px;
-    left: 578px;
+    left: 80px;
     top: 493px;
+    width: 1062px;
+    height: 0px;
     display: flex;
     justify-content: center;
 }
 @media (max-width: 320px) {
     .reviewSlider{
-        left: 37%;
+        left: 5%;
         top: 455px;
+        width: 272px;
     }
 }
 
@@ -204,7 +205,10 @@
 }
 @media (max-width: 320px) {
     .reviewsButtons{
-        display: none;
+        left: 17px;
+        top: 83px;
+        width: 272px;
+        height: 348px;
     }
 }
 
@@ -220,7 +224,10 @@
 }
 @media (max-width: 320px) {
     .backBtn{
-        display: none;
+        width: 56px;
+        height: 100%;
+        left: 0;
+        top: 0;
     }
 }
 
@@ -236,7 +243,10 @@
 }
 @media (max-width: 320px) {
     .forwardButton{
-        display: none;
+        width: 56px;
+        height: 100%;
+        right: 0;
+        top: 0;
     }
 }
 
@@ -245,7 +255,11 @@
 }
 @media (max-width: 320px) {
     .activeButton{
-        display: none;
+        background: none;
+        width: 56px;
+        height: 100%;
+        right: 0;
+        top: 0;
     }
 }
 
@@ -254,7 +268,11 @@
 }
 @media (max-width: 320px) {
     .nonActiveButton{
-        display: none;
+        background: none;
+        width: 56px;
+        height: 100%;
+        left: 0;
+        top: 0;
     }
 }
 
@@ -265,8 +283,6 @@
     height: 12px;
     left: 20.5px;
     top: 22px;
-
-    opacity: 0.5;
     transform: rotate(180deg);
     background-image: url(../../../icons/arrowBlack.svg);
     background-size: cover;

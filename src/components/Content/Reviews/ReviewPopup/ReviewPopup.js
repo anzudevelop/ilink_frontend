@@ -15,11 +15,13 @@ function ReviewPopup(props) {
     const clearInputs = () => {
         updateInputName('')
         updateInputReviewText('')
+        updateInputCounter(0)
     }
 
     const addReview = () => {
         if (inputName.length <= 0 || inputReviewText.length <= 0) return console.log('nothing')
         props.addReview(inputName, inputReviewText)
+
     }
 
     return (
