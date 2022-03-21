@@ -45,6 +45,7 @@ let store = {
                 reviewText: 'Отвечала за найм и адаптацию сотрудников в компании, за поддержание на нужном уровне HR-бренда и трудового настроя коллектива. В компанию пришла без опыта работы HR-ом. Всему научилась здесь. Как теории, так и практике. Набрала опыт достаточно быстро. Есть программа обучения, поощряются различные курсы, и это большой плюс. В коллективе очень дружная атмосфера. Все дружелюбные, амбициозные.',
             },
         ],
+        updatedReviewerPhoto: 'https://evroperimetr.ru/content/front/zabory_tmp1/img/reviews-icon.jpg',
     },
     getState() {
         return this._state
@@ -56,8 +57,8 @@ let store = {
         nameInput = nameInput.split(" ")
         let name = nameInput[0]
         let surname = nameInput[1]
+        let img = this._state.updatedReviewerPhoto
         let date = new Date().toLocaleDateString();
-        let img = 'https://evroperimetr.ru/content/front/zabory_tmp1/img/reviews-icon.jpg'
         let newReview = {
             id: this._state.reviewsData.length + 1,
             name: name,
@@ -67,7 +68,11 @@ let store = {
             reviewText: text,
         }
         this._state.reviewsData.push(newReview)
+        this._state.updatedReviewerPhoto = 'https://evroperimetr.ru/content/front/zabory_tmp1/img/reviews-icon.jpg'
         this._callSubscriber(this._state)
+    },
+    updateReviewerPhoto(srcImg) {
+        this._state.updatedReviewerPhoto = srcImg
     },
 
     subscribe(observer) {

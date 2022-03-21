@@ -37,7 +37,7 @@ function ReviewPopup(props) {
     const addReview = () => {
         if (inputName.length <= 0 || inputReviewText.length <= 0) return console.log('nothing')
         props.addReview(inputName, inputReviewText)
-        props.updateReviewerPhoto('https://evroperimetr.ru/content/front/zabory_tmp1/img/reviews-icon.jpg')
+        clearInputs()
     }
 
     return (
@@ -75,7 +75,6 @@ function ReviewPopup(props) {
 
             <button className={s.sendReview} onClick={() => {
                 props.setActive(false)
-                clearInputs()
                 addReview()
             }}>
                 <div className={s.text}>Отправить отзыв</div>

@@ -76,7 +76,7 @@ function Reviews(props) {
             </button>
 
             <Popup active={ popupActive } setActive={ setPopupActive }>
-                <ReviewPopup setActive={ setPopupActive } addReview={ props.addReview }/>
+                <ReviewPopup setActive={ setPopupActive } addReview={ props.addReview } updateReviewerPhoto={ props.updateReviewerPhoto }/>
             </Popup>
 
             <div className={s.reviewsWindow}>
