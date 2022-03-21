@@ -5,7 +5,7 @@ function ReviewItem(props) {
     return (
         <div className={props.profileStyle}>
             <div className={s.profileIcon}>
-                <img src={ props.review.profileImage } alt="reviewerProfileImg"/>
+                <img src={ props.review.profileImage } />
             </div>
             <div className={s.profileName}>{ props.review.name } { props.review.surname }</div>
             <div className={s.reviewDate}>{ props.review.reviewDate }</div>

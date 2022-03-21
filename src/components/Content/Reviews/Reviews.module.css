@@ -205,10 +205,7 @@
 }
 @media (max-width: 320px) {
     .reviewsButtons{
-        left: 17px;
-        top: 83px;
-        width: 272px;
-        height: 348px;
+        display: none;
     }
 }
 
@@ -224,10 +221,7 @@
 }
 @media (max-width: 320px) {
     .backBtn{
-        width: 56px;
-        height: 100%;
-        left: 0;
-        top: 0;
+        display: none;
     }
 }
 
@@ -243,10 +237,7 @@
 }
 @media (max-width: 320px) {
     .forwardButton{
-        width: 56px;
-        height: 100%;
-        right: 0;
-        top: 0;
+        display: none;
     }
 }
 
@@ -255,11 +246,7 @@
 }
 @media (max-width: 320px) {
     .activeButton{
-        background: none;
-        width: 56px;
-        height: 100%;
-        right: 0;
-        top: 0;
+        display: none;
     }
 }
 
@@ -268,11 +255,7 @@
 }
 @media (max-width: 320px) {
     .nonActiveButton{
-        background: none;
-        width: 56px;
-        height: 100%;
-        left: 0;
-        top: 0;
+        display: none;
     }
 }
 

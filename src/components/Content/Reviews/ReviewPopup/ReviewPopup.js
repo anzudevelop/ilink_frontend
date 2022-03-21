@@ -12,12 +12,13 @@ function ReviewPopup(props) {
     const [inputName, updateInputName] = useState('')
     const [inputReviewText, updateInputReviewText] = useState('')
     const [inputCounter, updateInputCounter] = useState(0)
+    const [profileImg, setProfileImg] = useState('https://evroperimetr.ru/content/front/zabory_tmp1/img/reviews-icon.jpg')
 
     const clearInputs = () => {
         updateInputName('')
         updateInputReviewText('')
         updateInputCounter(0)
-        props.updateReviewerPhoto('https://evroperimetr.ru/content/front/zabory_tmp1/img/reviews-icon.jpg')
+        setProfileImg('https://evroperimetr.ru/content/front/zabory_tmp1/img/reviews-icon.jpg')
     }
 
     const handleClick = () => {
@@ -30,13 +31,13 @@ function ReviewPopup(props) {
         reader.readAsDataURL(fileUploaded)
         reader.onload = function () {
             let imgSrc = reader.result
-            props.updateReviewerPhoto(imgSrc)
+            setProfileImg(imgSrc)
         }
     };
 
     const addReview = () => {
-        if (inputName.length <= 0 || inputReviewText.length <= 0) return console.log('nothing')
-        props.addReview(inputName, inputReviewText)
+        if (inputName.length <= 0 || inputReviewText.length <= 0) return
+        props.addReview(inputName, inputReviewText, profileImg)
         clearInputs()
     }
 

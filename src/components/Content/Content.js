@@ -7,7 +7,7 @@ function Content(props) {
         <div className={s.contentPage}>
             <div className={s.contentPageBgLine}/>
             <ProfileInfo data={ props.state.personData }/>
-            <Reviews reviews={ props.state.reviewsData } addReview={ props.addReview } updateReviewerPhoto={ props.updateReviewerPhoto }/>
+            <Reviews reviews={ props.state.reviewsData }/>
         </div>
 
     );

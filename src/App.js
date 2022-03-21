@@ -9,7 +9,7 @@ const App = (props) => {
   return (
       <div>
           <Header name={ props.state.personData.name } surname={ props.state.personData.surname } img={ props.state.personData.profileImage }/>
-          <Content state={ props.state } addReview={ props.addReview } updateReviewerPhoto={ props.updateReviewerPhoto }/>
+          <Content state={ props.state }/>
           <Footer />
       </div>
   );

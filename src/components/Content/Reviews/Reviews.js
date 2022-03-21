@@ -6,13 +6,12 @@ import ReviewPopup from "./ReviewPopup/ReviewPopup";
 import {useState} from "react";
 
 function Reviews(props) {
-
-    let reviewAmount = props.reviews.length
-
+    
+    const [reviewsList, updateReviewsList] = useState(props.reviews)
     const [reviewPageCounter, changeReviewPageCounter] = useState(0)
     const [popupActive, setPopupActive] = useState()
-    const [firstReview, updateFirstReview] = useState(props.reviews[reviewPageCounter])
-    const [secondReview, updateSecondReview] = useState(props.reviews[reviewPageCounter+1])
+    const [firstReview, updateFirstReview] = useState(reviewsList[reviewPageCounter])
+    const [secondReview, updateSecondReview] = useState(reviewsList[reviewPageCounter+1])
     const [backBtnClasses, updateBackBtnClasses] = useState(`${s.backBtn} ${s.nonActiveButton}`)
     const [forwardBtnClasses, updateForwardBtnClasses] = useState(`${s.forwardBtn} ${s.activeButton}`)
     const [backArrowOpacity, setBackArrowOpacity] = useState({opacity: 0.5})
@@ -21,17 +20,39 @@ function Reviews(props) {
 
     setSlider(reviewPageCounter)
 
+    let addReview = (nameInput, text, profileImg) => {
+        nameInput = nameInput.split(" ")
+        let name = nameInput[0]
+        let surname = nameInput[1]
+        let img = profileImg
+        let date = new Date().toLocaleDateString();
+        let newReview = {
+            id: reviewsList.length + 1,
+            name: name,
+            surname: surname,
+            profileImage: img,
+            reviewDate: date,
+            reviewText: text,
+        }
+        reviewsList.push(newReview)
+        if(!secondReview.propertyIsEnumerable('id')) updateSecondReview(newReview)
+        updateReviewsList(reviewsList)
+    }
+
+    let emptyReview = {}
 
     const nextReviews = () => {
-        if ((reviewPageCounter + 1) * 2 >= reviewAmount) return
-        if ((reviewPageCounter + 2) * 2 >= reviewAmount) {
+        if (reviewPageCounter + 1 == reviewsList.length) return
+        if ((reviewPageCounter + 2) * 2 >= reviewsList.length) {
             updateForwardBtnClasses(`${s.forwardBtn} ${s.nonActiveButton}`)
             setBackArrowOpacity({opacity: 0.5})
         }
-        changeReviewPageCounter(reviewPageCounter + 1)
+
         setSlider(reviewPageCounter)
-        updateFirstReview(props.reviews[reviewPageCounter + 2])
-        updateSecondReview(props.reviews[reviewPageCounter + 3])
+        updateFirstReview(props.reviews[reviewPageCounter + 1])
+        if ((reviewPageCounter + 2) === reviewsList.length) updateSecondReview(emptyReview)
+        else updateSecondReview(props.reviews[reviewPageCounter + 2])
+        changeReviewPageCounter(reviewPageCounter + 1)
         updateBackBtnClasses(`${s.backBtn} ${s.activeButton}`)
         setBackArrowOpacity({opacity: 1})
     }
@@ -49,21 +70,16 @@ function Reviews(props) {
         setForwardArrowOpacity({opacity: 1})
     }
 
-    let Sliders = [
-            <div className={s.reviewSliderActive} />,
-            <div className={s.reviewSliderNoneActive} />,
-            <div className={s.reviewSliderNoneActive} />,
-            <div className={s.reviewSliderNoneActive} />,
-            <div className={s.reviewSliderNoneActive} />
-        ]
+    const setPage = (page) => {
+
+    }
 
     function setSlider(mainPosition) {
         let ElementsList = []
         Slider = []
-        //setSliderPosition(ElementsList)
         for (let i = 0; i < mainPosition; i++) ElementsList.push(<div className={s.reviewSliderNoneActive} />,)
         ElementsList.push(<div className={s.reviewSliderActive} />,)
-        for (let i = (mainPosition + 1); i < reviewAmount/2; i++) ElementsList.push(<div className={s.reviewSliderNoneActive} />,)
+        for (let i = (mainPosition + 1); i < reviewsList.length; i++) ElementsList.push(<div className={s.reviewSliderNoneActive} />,)
         Slider = ElementsList
     }
 
@@ -76,7 +92,7 @@ function Reviews(props) {
             </button>
 
             <Popup active={ popupActive } setActive={ setPopupActive }>
-                <ReviewPopup setActive={ setPopupActive } addReview={ props.addReview } updateReviewerPhoto={ props.updateReviewerPhoto }/>
+                <ReviewPopup setActive={ setPopupActive } addReview={ addReview }/>
             </Popup>
 
             <div className={s.reviewsWindow}>
