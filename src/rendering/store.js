@@ -1,10 +1,12 @@
+import myPhoto from '../myPhoto/AlexeyKosogor.jpg'
+
 let store = {
     _state: {
         personData: {
             name: 'Алексей',
             surname: 'Косогор',
             birthDay: '04.02.2000',
-            profileImage: 'https://sun4-15.userapi.com/s/v1/ig2/NuLa6Zl-RcX7fdxtJlsBhLfmga3ByJbv8b6e96WA7xnlohCo_iqtuy42wdCerHnwx3JvdT5hyow24rtQlR4z9-BJ.jpg?size=200x200&quality=95&crop=167,393,1121,1121&ava=1',
+            profileImage: myPhoto,
             city: 'Томск',
             sex: 'male',
             age: 22,
