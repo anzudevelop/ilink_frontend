@@ -2,7 +2,6 @@ import s from './Reviews.module.css'
 import ReviewItem from "./ReviewItem/ReviewItem";
 import Popup from "../../Popup/Popup";
 import ReviewPopup from "./ReviewPopup/ReviewPopup";
-
 import {useState} from "react";
 
 function Reviews(props) {
@@ -16,6 +15,8 @@ function Reviews(props) {
     const [forwardBtnClasses, updateForwardBtnClasses] = useState(`${s.forwardBtn} ${s.activeButton}`)
     const [backArrowOpacity, setBackArrowOpacity] = useState({opacity: 0.5})
     const [forwardArrowOpacity, setForwardArrowOpacity] = useState({opacity: 1})
+    const [notification, setNotification] = useState(`${s.notificationBlock}`)
+    const [notifyMessage, updateNotifyMessage] = useState({})
     let Slider = []
 
     setSlider(reviewPageCounter)
@@ -43,7 +44,7 @@ function Reviews(props) {
 
     const nextReviews = () => {
         if (reviewPageCounter + 1 == reviewsList.length) return
-        if ((reviewPageCounter + 2) * 2 >= reviewsList.length) {
+        if (reviewPageCounter + 2 >= reviewsList.length) {
             updateForwardBtnClasses(`${s.forwardBtn} ${s.nonActiveButton}`)
             setBackArrowOpacity({opacity: 0.5})
         }
@@ -70,10 +71,6 @@ function Reviews(props) {
         setForwardArrowOpacity({opacity: 1})
     }
 
-    const setPage = (page) => {
-
-    }
-
     function setSlider(mainPosition) {
         let ElementsList = []
         Slider = []
@@ -82,6 +79,21 @@ function Reviews(props) {
         for (let i = (mainPosition + 1); i < reviewsList.length; i++) ElementsList.push(<div className={s.reviewSliderNoneActive} />,)
         Slider = ElementsList
     }
+
+    const pushNotification = (isSuccess) => {
+        if(isSuccess) {
+            updateNotifyMessage({status:'Успешно!', message:'Спасибо за отзыв о нашей компании :)'})
+            setNotification(`${s.notificationBlock} ${s.success}`)
+        }
+        else {
+            updateNotifyMessage({status:'Что-то не так...', message:'Не получилось отправить отзыв. Попробуйте еще раз!'})
+            setNotification(`${s.notificationBlock} ${s.error}`)
+        }
+        setTimeout(() => {
+            setNotification(`${s.notificationBlock}`)
+        }, 4000)
+    }
+
 
     return (
         <div className={s.reviewWindow}>
@@ -92,7 +104,7 @@ function Reviews(props) {
             </button>
 
             <Popup active={ popupActive } setActive={ setPopupActive }>
-                <ReviewPopup setActive={ setPopupActive } addReview={ addReview }/>
+                <ReviewPopup setActive={ setPopupActive } addReview={ addReview } pushNotification={ pushNotification }/>
             </Popup>
 
             <div className={s.reviewsWindow}>
@@ -114,6 +126,16 @@ function Reviews(props) {
                 <button className={ forwardBtnClasses } onClick={nextReviews}>
                     <div className={s.forwardButtonArrow} style={forwardArrowOpacity}/>
                 </button>
+            </div>
+
+            <div className={notification}>
+                <div className={s.icon}></div>
+                <div className={s.closeNotify} onClick={() => setNotification(false)}/>
+                <div className={s.content}>
+                    <div className={s.divIconBg} />
+                </div>
+                <h1>{ notifyMessage.status }</h1>
+                <p>{ notifyMessage.message }</p>
             </div>
 
 

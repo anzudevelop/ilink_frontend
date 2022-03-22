@@ -295,3 +295,221 @@
         display: none;
     }
 }
+
+.notificationBlock {
+    opacity: 0;
+    visibility: hidden;
+    position: fixed;
+    bottom: -1000px;
+    right: 40px;
+    width: 438px;
+    height: 132px;
+    transition: 500ms;
+}
+@media (max-width: 320px) {
+    .notificationBlock{
+        left: 5%;
+        width: 288px;
+        height: 132px;
+    }
+}
+
+.notificationBlock.success{
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    bottom: 40px;
+    right: 40px;
+    transition: 500ms;
+}
+@media (max-width: 320px) {
+    .notificationBlock.success{
+        left: 5%;
+        width: 288px;
+        height: 132px;
+        bottom: 16px;
+    }
+}
+
+.notificationBlock.error{
+    opacity: 1;
+    visibility: visible;
+    z-index: 1;
+    bottom: 40px;
+    right: 40px;
+    transition: 500ms;
+}
+@media (max-width: 320px) {
+    .notificationBlock.error{
+        left: 5%;
+        width: 288px;
+        height: 132px;
+        bottom: 16px;
+    }
+}
+
+.notificationBlock .content {
+    width: 438px;
+    height: 132px;
+    border-radius: 32px;
+    transition: 500ms;
+}
+@media (max-width: 320px) {
+    .notificationBlock .content{
+        left: 5%;
+        width: 288px;
+        height: 132px;
+        bottom: 16px;
+    }
+}
+
+.notificationBlock.success .content {
+    background: #B5FFA2;
+}
+.notificationBlock.error .content {
+    background: #F64B3C;
+}
+
+.notificationBlock .icon {
+    position: absolute;
+    top: -42px;
+    left: 24px;
+    width: 69px;
+    height: 69px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@media (max-width: 320px) {
+    .notificationBlock .icon{
+        top: -34px;
+        left: 14px;
+        width: 56px;
+        height: 56px;
+    }
+}
+
+.notificationBlock.success .icon {
+    background-image: url(../../../icons/notificationDesign/success.svg);
+}
+.notificationBlock.error .icon {
+    background-image: url(../../../icons/notificationDesign/fail.svg);
+}
+
+.notificationBlock .closeNotify {
+    cursor: pointer;
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    width: 24px;
+    height: 24px;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+@media (max-width: 320px) {
+    .notificationBlock .closeNotify{
+        top: 16px;
+        right: 16px;
+        width: 16px;
+        height: 16px;
+    }
+}
+
+.notificationBlock.success .closeNotify {
+    background-image: url(../../../icons/notificationDesign/closeBlack.svg);
+
+}
+.notificationBlock.error .closeNotify {
+    background-image: url(../../../icons/notificationDesign/closeWhite.svg);
+}
+
+.notificationBlock .divIconBg {
+    position: absolute;
+    bottom: 0;
+    left: 0px;
+    width: 93px;
+    height: 87px;
+    border-radius: 0 0 0 32px;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+@media (max-width: 320px) {
+    .notificationBlock .divIconBg{
+        bottom: 0;
+        left: 0px;
+        width: 70px;
+        height: 65px;
+    }
+}
+
+
+.notificationBlock.success .divIconBg {
+    background-image: url(../../../icons/notificationDesign/greenBubbles.svg);
+
+}
+.notificationBlock.error .divIconBg {
+    background-image: url(../../../icons/notificationDesign/redBubbles.svg);
+}
+
+.notificationBlock h1 {
+    position: absolute;
+    top: 0;
+    left: 110px;
+    font-family: Factor A TRIAL;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    letter-spacing: -0.035em;
+    padding: 5px;
+}
+@media (max-width: 320px) {
+    .notificationBlock h1{
+        top: 9px;
+        left: 70px;
+        font-family: Factor A TRIAL;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 24px;
+        line-height: 28px;
+    }
+}
+
+.notificationBlock.success h1 {
+    color: #333333;
+}
+.notificationBlock.error h1 {
+    color: #ffffff;
+}
+
+.notificationBlock p {
+    position: absolute;
+    top: 49px;
+    left: 110px;
+    font-family: Gilroy;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 22px;
+    padding: 5px;
+
+}
+@media (max-width: 320px) {
+    .notificationBlock p{
+        top: 45px;
+        left: 70px;
+        font-family: Gilroy;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+    }
+}
+
+.notificationBlock.success p {
+    color: #333333;
+}
+.notificationBlock.error p {
+    color: #ffffff;
+}

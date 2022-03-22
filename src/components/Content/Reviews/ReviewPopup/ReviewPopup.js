@@ -36,8 +36,13 @@ function ReviewPopup(props) {
     };
 
     const addReview = () => {
-        if (inputName.length <= 0 || inputReviewText.length <= 0) return
+        if (inputName.length <= 0 || inputReviewText.length <= 0) {
+            props.pushNotification(false)
+            clearInputs()
+            return
+        }
         props.addReview(inputName, inputReviewText, profileImg)
+        props.pushNotification(true)
         clearInputs()
     }
 
